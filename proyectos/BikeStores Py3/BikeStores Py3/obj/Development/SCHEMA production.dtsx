@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/29/2025 4:34:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BRASLY"
+  DTS:CreatorName="BRASLY\brasl"
+  DTS:DTSID="{0DE3B774-D211-4ED5-9C96-7B69FA78DC2F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="5130"
+  DTS:ObjectName="SCHEMA production"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{EE9ABB97-301B-4A44-9CB7-2D89ECDBB373}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Borrar scheme"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9604120b-a70c-4d1d-89b4-dd007dd7689d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Borrar scheme"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7154D9B0-82DA-4976-A65A-587A6AE99602}"
+          SQLTask:SqlStatementSource="&#xA;DROP TABLE IF EXISTS production.stocks;&#xA;DROP TABLE IF EXISTS production.products;&#xA;DROP TABLE IF EXISTS production.categories;&#xA;DROP TABLE IF EXISTS production.brands;&#xA;DROP SCHEMA IF EXISTS production" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Crear scheme"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{bc470f7d-3933-4bbf-801c-ded7e13f5aff}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Crear scheme"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7154D9B0-82DA-4976-A65A-587A6AE99602}"
+          SQLTask:SqlStatementSource="CREATE SCHEMA production" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{ab79263d-f0ba-4067-b378-0c7ffb83b5a9}"
+      DTS:From="Package\Borrar scheme"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Crear scheme" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Borrar scheme"
+          TopLeft="70.8333329028555,60" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Crear scheme"
+          TopLeft="60,177.866667603387" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="144.033332902856,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.4333329028555,76.266667603387"
+              Start="0,0"
+              End="-12.4333329028555,68.766667603387">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1333338016935" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.1333338016935"
+                    Point2="0,38.1333338016935"
+                    Point3="-4,38.1333338016935" />
+                  <mssgle:LineSegment
+                    End="-8.43333290285551,38.1333338016935" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.43333290285551,38.1333338016935"
+                    Point2="-12.4333329028555,38.1333338016935"
+                    Point3="-12.4333329028555,42.1333338016935" />
+                  <mssgle:LineSegment
+                    End="-12.4333329028555,68.766667603387" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
