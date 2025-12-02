@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="BRASLY_BRASLY.BikeStores_DW"
+  DTS:DTSID="{2650BADA-C9EA-4723-A73E-1EAB25807BDE}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=BRASLY\BRASLY;Initial Catalog=BikeStores_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-BikeStores Py3-{2650BADA-C9EA-4723-A73E-1EAB25807BDE}BRASLY\BRASLY.BikeStores_DW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
