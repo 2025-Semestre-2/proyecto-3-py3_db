@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{1EFDE7F0-50A1-457E-8FEE-5E97EE32D6BB}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{E6D3B82E-5225-4ECB-BDFD-F7EECA7AC3DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1270,7 +1270,7 @@ JOIN production.categories AS c ON p.category_id = c.category_id;</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task"
           TopLeft="378.333318299718,100.533334132301" />
       </GraphLayout>
@@ -1282,13 +1282,25 @@ JOIN production.categories AS c ON p.category_id = c.category_id;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="208,41.6"
+          Size="208,42"
           Id="Package\Data Flow Task\Slowly Changing Dimension"
           TopLeft="205.1,107.1" />
         <NodeLayout
-          Size="152,41.6"
+          Size="159,42"
+          Id="Package\Data Flow Task\Insert Destination"
+          TopLeft="5.50000000000009,208.7" />
+        <NodeLayout
+          Size="152,42"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="233.1,5.49999999999984" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Data Flow Task\OLE DB Command"
+          TopLeft="225.5,208.7" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Data Flow Task\OLE DB Command 1"
+          TopLeft="453.1,208.7" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="309.1,47.0999999999998">
@@ -1311,10 +1323,6 @@ JOIN production.categories AS c ON p.category_id = c.category_id;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Data Flow Task\Insert Destination"
-          TopLeft="5.50000000000009,208.7" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[New Output]"
           TopLeft="259.1,148.7">
@@ -1351,10 +1359,6 @@ JOIN production.categories AS c ON p.category_id = c.category_id;</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="225.5,208.7" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Inferred Member Updates Output]"
           TopLeft="309.1,148.7">
@@ -1379,10 +1383,6 @@ JOIN production.categories AS c ON p.category_id = c.category_id;</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Data Flow Task\OLE DB Command 1"
-          TopLeft="453.1,208.7" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Changing Attribute Updates Output]"
           TopLeft="359.1,148.7">

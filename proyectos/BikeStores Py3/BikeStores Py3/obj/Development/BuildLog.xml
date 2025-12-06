@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>BikeStores Py3</Name>
-    <LastWriteTime>2025-12-02T06:31:23.5314697Z</LastWriteTime>
+    <LastWriteTime>2025-12-06T10:27:48.5821549Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -58,22 +58,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Ext order_items.dtsx</Name>
-      <LastWriteTime>2025-11-29T12:41:54.3280065Z</LastWriteTime>
+      <LastWriteTime>2025-12-02T06:47:18.7653697Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Orquestador.dtsx</Name>
-      <LastWriteTime>2025-12-02T06:35:35.7221539Z</LastWriteTime>
+      <LastWriteTime>2025-12-06T10:27:48.5479252Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Orders.dtsx</Name>
-      <LastWriteTime>2025-12-01T05:59:09.6681473Z</LastWriteTime>
+      <LastWriteTime>2025-12-06T10:41:06.660916Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Products.dtsx</Name>
-      <LastWriteTime>2025-12-02T05:13:18.792876Z</LastWriteTime>
+      <LastWriteTime>2025-12-06T10:27:48.5529248Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -99,6 +99,21 @@
     <ProjectBuildItemInfo>
       <Name>Dim Customers.dtsx</Name>
       <LastWriteTime>2025-12-02T06:36:30.3816639Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim Date.dtsx</Name>
+      <LastWriteTime>2025-12-06T11:05:47.3422238Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dim Products_Hist.dtsx</Name>
+      <LastWriteTime>2025-12-06T10:27:48.512736Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact Sales.dtsx</Name>
+      <LastWriteTime>2025-12-06T10:28:46.9827997Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

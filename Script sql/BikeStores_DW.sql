@@ -11,6 +11,10 @@ CREATE TABLE cargarFTVentas(
 );
 GO
 
+
+select * from  cargarFTVentas 
+insert into cargarFTVentas (UltimaCarga) values (getdate())
+
 CREATE TABLE dbo.DimDate(
     DateKey INT NOT NULL PRIMARY KEY, 
     [Date] DATE NOT NULL,
@@ -136,6 +140,20 @@ CREATE TABLE DimProducts(
   CONSTRAINT PK_DimProducts PRIMARY KEY (ProductKey)
 );
 GO
+CREATE TABLE DimProducts_Hist(
+  ProductID INT NOT NULL,
+  ProductName VARCHAR(255)  NOT NULL,
+  BrandID INT NOT NULL,
+  BrandName VARCHAR(255)  NOT NULL,
+  CategoryID INT NOT NULL,
+  CategoryName VARCHAR(255) NOT NULL,
+  ModelYear SMALLINT NOT NULL,
+  ListPrice DECIMAL(10,2) NOT NULL,
+  StartDate DATETIME NOT NULL,
+  EndDate DATETIME NULL
+);
+GO
+
 
 CREATE TABLE DimOrders(
   OrdersKey INT IDENTITY(1,1) NOT NULL,
@@ -148,6 +166,7 @@ CREATE TABLE DimOrders(
 );
 GO
 
+
 CREATE TABLE FactSales(
   SalesKey INT IDENTITY(1,1) NOT NULL,
   ProductKey INT NOT NULL,
@@ -156,8 +175,6 @@ CREATE TABLE FactSales(
   StoreKey INT NOT NULL,
   OrderKey INT NOT NULL,
   OrderDateKey INT NOT NULL,
-  RequiredDateKey INT NOT NULL,
-  ShippedDateKey INT NULL,
   Quantity INT NOT NULL,
   ListPrice DECIMAL(10,2) NOT NULL,
   Discount DECIMAL(4,2) NOT NULL,
@@ -169,20 +186,19 @@ CREATE TABLE FactSales(
 GO
 
 ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(ProductKey)
-REFERENCES DimProducts(ProductKey);
+  REFERENCES DimProducts(ProductKey);
 ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(CustomerKey)
-REFERENCES DimCustomers(CustomerKey);
+  REFERENCES DimCustomers(CustomerKey);
 ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(StaffKey)
-REFERENCES DimStaff(StaffKey);
+  REFERENCES DimStaff(StaffKey);
 ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(StoreKey)
-REFERENCES DimStores(StoreKey);
+  REFERENCES DimStores(StoreKey);
 ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(OrderKey)
-REFERENCES DimOrders(OrdersKey);
+  REFERENCES DimOrders(OrdersKey);
 ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(OrderDateKey)
-REFERENCES DimDate(DateKey);
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(RequiredDateKey)
-REFERENCES DimDate(DateKey);
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(ShippedDateKey)
-REFERENCES DimDate(DateKey);
+  REFERENCES DimDate(DateKey);
 GO
 
+
+
+select * from dbo.FactSales
