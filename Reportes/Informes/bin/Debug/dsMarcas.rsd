@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>BikeStores</DataSourceReference>
+      <CommandText>SELECT 0 AS brand_id, 'Todas las marcas' AS brand_name
+UNION ALL
+SELECT brand_id, brand_name
+FROM production.brands;</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="brand_id">
+        <DataField>brand_id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="brand_name">
+        <DataField>brand_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

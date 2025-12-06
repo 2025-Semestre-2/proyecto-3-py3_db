@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>BikeStores</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@StoreId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@CategoryId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@BrandId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT
+    s.store_id,
+    s.store_name,
+    c.category_id,
+    c.category_name,
+    b.brand_id,
+    b.brand_name,
+    p.product_id,
+    p.product_name,
+    SUM(st.quantity) AS total_quantity
+FROM production.stocks    AS st
+JOIN production.products   AS p ON st.product_id = p.product_id
+JOIN production.brands     AS b ON p.brand_id    = b.brand_id
+JOIN production.categories AS c ON p.category_id = c.category_id
+JOIN sales.stores          AS s ON st.store_id   = s.store_id
+WHERE (@StoreId   = 0 OR s.store_id     = @StoreId)
+  AND (@CategoryId = 0 OR c.category_id = @CategoryId)
+  AND (@BrandId    = 0 OR b.brand_id    = @BrandId)
+
+GROUP BY
+    s.store_id, s.store_name,
+    c.category_id, c.category_name,
+    b.brand_id, b.brand_name,
+    p.product_id, p.product_name
+ORDER BY
+    c.category_name,
+    b.brand_name,
+    p.product_name;</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="store_id">
+        <DataField>store_id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="store_name">
+        <DataField>store_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="category_id">
+        <DataField>category_id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="category_name">
+        <DataField>category_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="brand_id">
+        <DataField>brand_id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="brand_name">
+        <DataField>brand_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="product_id">
+        <DataField>product_id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="product_name">
+        <DataField>product_name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="total_quantity">
+        <DataField>total_quantity</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
