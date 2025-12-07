@@ -100,3 +100,4 @@ CREATE TABLE sales.order_items(
 	list_price DECIMAL(10,2) NOT NULL,
 	discount DECIMAL(4,2) NOT NULL
 );
+

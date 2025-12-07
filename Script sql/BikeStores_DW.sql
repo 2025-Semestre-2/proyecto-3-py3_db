@@ -55,61 +55,60 @@ CREATE TABLE dbo.DimDate(
 );
 GO
 
-CREATE TABLE DimCustomers(
-  CustomerKey INT IDENTITY(1,1) NOT NULL,
-  CustomerID INT NOT NULL,
-  FirstName VARCHAR(255) NOT NULL,
-  LastName VARCHAR(255) NOT NULL,
-  Phone VARCHAR(25) NULL,
-  Email VARCHAR(255) NOT NULL,
-  Street VARCHAR(255) NULL,
-  City VARCHAR(50) NULL,
-  State VARCHAR(25) NULL,
-  ZipCode VARCHAR(5) NULL,
-  CONSTRAINT PK_DimCustomers PRIMARY KEY (CustomerKey)
+CREATE TABLE dbo.DimCustomers(
+    CustomerKey INT IDENTITY(1,1) NOT NULL,
+    CustomerID INT NOT NULL,
+    FullName VARCHAR(100) NOT NULL,
+    Phone VARCHAR(25) NULL,
+    Email VARCHAR(255) NOT NULL,
+    Street VARCHAR(255) NULL,
+    City VARCHAR(50) NULL,
+    State VARCHAR(25) NULL,
+    ZipCode VARCHAR(5) NULL,
+    CONSTRAINT PK_DimCustomers PRIMARY KEY(CustomerKey)
 );
 GO
 
-CREATE TABLE DimCustomers_Hist(
-  CustomerID INT NOT NULL,
-  FirstName VARCHAR(255) NOT NULL,
-  LastName VARCHAR(255) NOT NULL,
-  Phone VARCHAR(25) NULL,
-  Email VARCHAR(255) NOT NULL,
-  Street VARCHAR(255) NULL,
-  City VARCHAR(50) NULL,
-  State VARCHAR(25) NULL,
-  ZipCode VARCHAR(5) NULL,
-  StartDate DATETIME NOT NULL,
-  EndDate DATETIME NULL
+
+CREATE TABLE dbo.DimCustomers_Hist(
+    CustomerID INT NOT NULL,
+    FullName VARCHAR(100) NOT NULL,
+    Phone VARCHAR(25) NULL,
+    Email VARCHAR(255) NOT NULL,
+    Street VARCHAR(255) NULL,
+    City VARCHAR(50) NULL,
+    State VARCHAR(25) NULL,
+    ZipCode VARCHAR(5) NULL,
+    StartDate DATETIME NOT NULL,
+    EndDate DATETIME NULL
 );
 GO
 
-CREATE TABLE DimStaff(
-  StaffKey INT IDENTITY(1,1) NOT NULL,
-  StaffID INT NOT NULL,
-  FirstName VARCHAR(50) NOT NULL,
-  LastName VARCHAR(50) NOT NULL,
-  Email VARCHAR(255) NOT NULL,
-  Phone VARCHAR(25) NULL,
-  Active TINYINT NOT NULL,
-  StoreID INT NOT NULL,
-  ManagerID INT NULL,
-  CONSTRAINT PK_DimStaff PRIMARY KEY (StaffKey)
+
+CREATE TABLE dbo.DimStaff(
+    StaffKey INT IDENTITY(1,1) NOT NULL,
+    StaffID INT NOT NULL,
+    FullName VARCHAR(100) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Phone VARCHAR(25) NULL,
+    Active TINYINT NOT NULL,
+    StoreID INT NOT NULL,
+    ManagerID INT NULL,
+    CONSTRAINT PK_DimStaff PRIMARY KEY(StaffKey)
 );
 GO
 
-CREATE TABLE DimStaff_Hist(
-  StaffID INT NOT NULL,
-  FirstName VARCHAR(50) NOT NULL,
-  LastName VARCHAR(50) NOT NULL,
-  Email VARCHAR(255) NOT NULL,
-  Phone VARCHAR(25) NULL,
-  Active TINYINT NOT NULL,
-  StoreID INT NOT NULL,
-  ManagerID INT NULL,
-  StartDate DATETIME NOT NULL,
-  EndDate DATETIME NULL
+
+CREATE TABLE dbo.DimStaff_Hist(
+    StaffID INT NOT NULL,
+    FullName VARCHAR(100) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Phone VARCHAR(25) NULL,
+    Active TINYINT NOT NULL,
+    StoreID INT NOT NULL,
+    ManagerID INT NULL,
+    StartDate DATETIME NOT NULL,
+    EndDate DATETIME NULL
 );
 GO
 
@@ -165,40 +164,52 @@ CREATE TABLE DimOrders(
   CONSTRAINT PK_DimOrders PRIMARY KEY (OrdersKey)
 );
 GO
-
-
-CREATE TABLE FactSales(
-  SalesKey INT IDENTITY(1,1) NOT NULL,
-  ProductKey INT NOT NULL,
-  CustomerKey INT NOT NULL,
-  StaffKey INT NOT NULL,
-  StoreKey INT NOT NULL,
-  OrderKey INT NOT NULL,
-  OrderDateKey INT NOT NULL,
-  Quantity INT NOT NULL,
-  ListPrice DECIMAL(10,2) NOT NULL,
-  Discount DECIMAL(4,2) NOT NULL,
-  AmountGross DECIMAL(18,2) NOT NULL,
-  AmountDiscount DECIMAL(18,2) NOT NULL,
-  AmountNet DECIMAL(18,2) NOT NULL,
-  CONSTRAINT PK_FactSales PRIMARY KEY CLUSTERED (SalesKey ASC)
+create table dbo.DimStocks(
+    StockKey int identity(1,1) not null,
+    StoreID int not null,
+    ProductID int not null,
+    Quantity int null,
+    constraint PK_DimStocks primary key(StockKey)
 );
-GO
-
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(ProductKey)
-  REFERENCES DimProducts(ProductKey);
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(CustomerKey)
-  REFERENCES DimCustomers(CustomerKey);
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(StaffKey)
-  REFERENCES DimStaff(StaffKey);
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(StoreKey)
-  REFERENCES DimStores(StoreKey);
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(OrderKey)
-  REFERENCES DimOrders(OrdersKey);
-ALTER TABLE FactSales WITH CHECK ADD FOREIGN KEY(OrderDateKey)
-  REFERENCES DimDate(DateKey);
-GO
 
 
+create table dbo.FactSales(
+    SalesKey int identity(1,1) not null,
+    ProductKey int not null,
+    CustomerKey int not null,
+    StaffKey int not null,
+    StoreKey int not null,
+    OrderKey int not null,
+    OrderDateKey int not null,
+    RequiredDateKey int null,
+    ShippedDateKey int null,
+    Quantity int not null,
+    ListPrice decimal(10,2) not null,
+    Discount decimal(4,2) not null,
+    AmountGross decimal(18,2) not null,
+    AmountDiscount decimal(18,2) not null,
+    AmountNet decimal(18,2) not null,
+    constraint PK_FactSales primary key clustered (SalesKey asc)
+);
+go
 
-select * from dbo.FactSales
+alter table dbo.FactSales with check add foreign key(ProductKey)
+    references dbo.DimProducts(ProductKey);
+alter table dbo.FactSales with check add foreign key(CustomerKey)
+    references dbo.DimCustomers(CustomerKey);
+alter table dbo.FactSales with check add foreign key(StaffKey)
+    references dbo.DimStaff(StaffKey);
+alter table dbo.FactSales with check add foreign key(StoreKey)
+    references dbo.DimStores(StoreKey);
+alter table dbo.FactSales with check add foreign key(OrderKey)
+    references dbo.DimOrders(OrdersKey);
+alter table dbo.FactSales with check add foreign key(OrderDateKey)
+    references dbo.DimDate(DateKey);
+alter table dbo.FactSales with check add foreign key(RequiredDateKey)
+    references dbo.DimDate(DateKey);
+alter table dbo.FactSales with check add foreign key(ShippedDateKey)
+    references dbo.DimDate(DateKey);
+go
+
+
+

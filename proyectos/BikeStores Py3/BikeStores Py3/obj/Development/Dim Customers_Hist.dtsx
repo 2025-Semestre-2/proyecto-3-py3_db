@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{E070A0A5-8BF5-453D-ADE1-7CE23C7E342E}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{6CBC5E37-0CB4-42C5-ABF7-A06EFB747908}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -258,21 +258,13 @@
                       externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[customer_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="first_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[first_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="last_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[last_name]" />
+                      cachedLength="511"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[FullName]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[phone]"
                       cachedCodepage="1252"
@@ -335,17 +327,11 @@
                       dataType="i4"
                       name="CustomerID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
-                      name="FirstName" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="LastName" />
+                      length="100"
+                      name="FullName" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
                       codePage="1252"
@@ -548,7 +534,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomers_Hist] SET [City] = ?,[Email] = ?,[FirstName] = ?,[LastName] = ?,[Phone] = ?,[State] = ?,[Street] = ?,[ZipCode] = ? WHERE [CustomerID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomers_Hist] SET [City] = ?,[Email] = ?,[FullName] = ?,[Phone] = ?,[State] = ?,[Street] = ?,[ZipCode] = ? WHERE [CustomerID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -582,7 +568,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[customer_id]"
                       cachedDataType="i4"
                       cachedName="customer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[email]"
@@ -593,28 +579,20 @@
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[first_name]"
+                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="first_name"
+                      cachedLength="511"
+                      cachedName="FullName"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="last_name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[phone]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="25"
                       cachedName="phone"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[state]"
@@ -622,7 +600,7 @@
                       cachedDataType="str"
                       cachedLength="25"
                       cachedName="state"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[street]"
@@ -630,7 +608,7 @@
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="street"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[zip_code]"
@@ -638,7 +616,7 @@
                       cachedDataType="str"
                       cachedLength="5"
                       cachedName="zip_code"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[zip_code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -673,7 +651,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="100"
                       name="Param_2">
                       <properties>
                         <property
@@ -686,7 +664,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="25"
                       name="Param_3">
                       <properties>
                         <property
@@ -712,7 +690,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
+                      length="255"
                       name="Param_5">
                       <properties>
                         <property
@@ -725,7 +703,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="5"
                       name="Param_6">
                       <properties>
                         <property
@@ -736,21 +714,8 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      name="Param_7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       dataType="i4"
-                      name="Param_8">
+                      name="Param_7">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -811,7 +776,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomers_Hist] SET [Email] = ?,[FirstName] = ?,[LastName] = ?,[Phone] = ?,[State] = ?,[Street] = ?,[ZipCode] = ? WHERE [CustomerID] = ? AND [EndDate] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomers_Hist] SET [Email] = ?,[FullName] = ?,[Phone] = ?,[State] = ?,[Street] = ?,[ZipCode] = ? WHERE [CustomerID] = ? AND [EndDate] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -837,7 +802,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[customer_id]"
                       cachedDataType="i4"
                       cachedName="customer_id"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[email]"
@@ -848,28 +813,20 @@
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[first_name]"
+                      refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="first_name"
+                      cachedLength="511"
+                      cachedName="FullName"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="last_name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]" />
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[phone]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="25"
                       cachedName="phone"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[state]"
@@ -877,7 +834,7 @@
                       cachedDataType="str"
                       cachedLength="25"
                       cachedName="state"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[street]"
@@ -885,7 +842,7 @@
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="street"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[zip_code]"
@@ -893,7 +850,7 @@
                       cachedDataType="str"
                       cachedLength="5"
                       cachedName="zip_code"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[zip_code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -915,7 +872,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="100"
                       name="Param_1">
                       <properties>
                         <property
@@ -928,7 +885,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="25"
                       name="Param_2">
                       <properties>
                         <property
@@ -954,7 +911,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
+                      length="255"
                       name="Param_4">
                       <properties>
                         <property
@@ -967,7 +924,7 @@
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
+                      length="5"
                       name="Param_5">
                       <properties>
                         <property
@@ -978,21 +935,8 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      name="Param_6">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       dataType="i4"
-                      name="Param_7">
+                      name="Param_6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1060,7 +1004,16 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    customer_id,
+    first_name + ' ' + last_name AS FullName,
+    phone,
+    email,
+    street,
+    city,
+    state,
+    zip_code
+FROM sales.customers;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1077,7 +1030,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -1104,28 +1057,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
                       name="customer_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
-                      name="first_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
-                      name="last_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone]"
@@ -1193,6 +1124,17 @@
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[zip_code]"
                       name="zip_code"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      length="511"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1200,18 +1142,6 @@
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
                       dataType="i4"
                       name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="first_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="last_name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone]"
                       codePage="1252"
@@ -1248,6 +1178,12 @@
                       dataType="str"
                       length="5"
                       name="zip_code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="FullName" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1261,19 +1197,12 @@
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
                       name="customer_id" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FullName]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      name="first_name" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      name="last_name" />
+                      length="511"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      name="FullName" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone]"
                       codePage="1252"
@@ -1345,7 +1274,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [CustomerID], [Email], [FirstName], [LastName], [Phone], [State], [Street], [ZipCode],[StartDate],[EndDate] FROM [dbo].[DimCustomers_Hist]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [City], [CustomerID], [Email], [FullName], [Phone], [State], [Street], [ZipCode],[StartDate],[EndDate] FROM [dbo].[DimCustomers_Hist]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -1437,28 +1366,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[first_name]"
+                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[FullName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="first_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FirstName]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">2</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="last_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[LastName]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]">
+                      cachedLength="511"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1546,17 +1460,11 @@
                       length="255"
                       name="Email" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FirstName]"
+                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
-                      name="FirstName" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="LastName" />
+                      length="100"
+                      name="FullName" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Phone]"
                       codePage="1252"
@@ -1669,36 +1577,6 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[first_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="first_name"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[first_name]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="last_name"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[last_name]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[phone]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1788,6 +1666,21 @@
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[zip_code]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[FullName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="511"
+                      cachedName="FullName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[FullName]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1807,36 +1700,6 @@
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[customer_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[first_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="first_name"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[first_name]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="last_name"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[last_name]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1929,6 +1792,21 @@
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[zip_code]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[FullName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="511"
+                      cachedName="FullName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[FullName]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1950,20 +1828,6 @@
                       dataType="i4"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[customer_id]"
                       name="customer_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[first_name]"
-                      name="first_name" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[last_name]"
-                      name="last_name" />
                     <outputColumn
                       refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[phone]"
                       codePage="1252"
@@ -2006,6 +1870,13 @@
                       length="5"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[zip_code]"
                       name="zip_code" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[FullName]"
+                      name="FullName" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -2076,7 +1947,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task"
           TopLeft="343.333319690493,104.000000826518" />
       </GraphLayout>
@@ -2088,27 +1959,27 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="158.1,5.49999999999995" />
+          TopLeft="164,5.5" />
         <NodeLayout
-          Size="208,41.6"
+          Size="216,42"
           Id="Package\Data Flow Task\Slowly Changing Dimension"
-          TopLeft="130.1,107.1" />
+          TopLeft="132,107.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="234.1,47.1">
+          TopLeft="240,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2118,58 +1989,58 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="152.8,41.6"
+          Size="158,42"
           Id="Package\Data Flow Task\Derived Column"
-          TopLeft="20.7,208.7" />
+          TopLeft="21,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Historical Attribute Inserts Output]"
-          TopLeft="174.1,148.7">
+          TopLeft="177.6,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-77,60"
+              EndConnector="-77.6,60.0000000000001"
               Start="0,0"
-              End="-77,52.5">
+              End="-77.6,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.8378378378378" />
+                    End="0,13.8125" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.8378378378378"
-                    Point2="0,17.8378378378378"
-                    Point3="-4,17.8378378378378" />
+                    Point1="0,13.8125"
+                    Point2="0,17.8125"
+                    Point3="-4,17.8125" />
                   <mssgle:LineSegment
-                    End="-73,17.8378378378378" />
+                    End="-73.6,17.8125" />
                   <mssgle:CubicBezierSegment
-                    Point1="-73,17.8378378378378"
-                    Point2="-77,17.8378378378378"
-                    Point3="-77,21.8378378378378" />
+                    Point1="-73.6,17.8125"
+                    Point2="-77.6,17.8125"
+                    Point3="-77.6,21.8125" />
                   <mssgle:LineSegment
-                    End="-77,52.5" />
+                    End="-77.6,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-113.55638671875,22.8378378378378,150.1127734375,11.609375"
+              BoundingBox="-113.85638671875,22.8125,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="167.2,41.6"
+          Size="173,42"
           Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="5.50000000000003,310.3" />
+          TopLeft="5.5,311.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="97.1,250.3">
+          TopLeft="100,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8,59.9999999999999"
+              EndConnector="-8,60"
               Start="0,0"
-              End="-8,52.4999999999999">
+              End="-8,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2186,7 +2057,7 @@
                     Point2="-8,30"
                     Point3="-8,34" />
                   <mssgle:LineSegment
-                    End="-8,52.4999999999999" />
+                    End="-8,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2196,71 +2067,71 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="120,41.6"
+          Size="123,42"
           Id="Package\Data Flow Task\Union All"
-          TopLeft="174.1,411.9" />
+          TopLeft="178.5,413.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[New Output]"
-          TopLeft="214.1,148.7">
+          TopLeft="219.2,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.6666666666667,263.2"
+              EndConnector="39.9666666666666,264"
               Start="0,0"
-              End="38.6666666666667,255.7">
+              End="39.9666666666666,256.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,138.046830382638" />
+                    End="0,138.507066070781" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,138.046830382638"
-                    Point2="0,142.046830382638"
-                    Point3="4,142.046830382638" />
+                    Point1="0,138.507066070781"
+                    Point2="0,142.507066070781"
+                    Point3="4,142.507066070781" />
                   <mssgle:LineSegment
-                    End="34.6666666666667,142.046830382638" />
+                    End="35.9666666666666,142.507066070781" />
                   <mssgle:CubicBezierSegment
-                    Point1="34.6666666666667,142.046830382638"
-                    Point2="38.6666666666667,142.046830382638"
-                    Point3="38.6666666666667,146.046830382638" />
+                    Point1="35.9666666666666,142.507066070781"
+                    Point2="39.9666666666666,142.507066070781"
+                    Point3="39.9666666666666,146.507066070781" />
                   <mssgle:LineSegment
-                    End="38.6666666666667,255.7" />
+                    End="39.9666666666666,256.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.75805338541667,147.046830382638,54.1827734375,11.43359375"
+              BoundingBox="-7.10805338541668,147.507066070781,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="89.1,351.9">
+          TopLeft="92,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="126.333333333333,59.9999999999998"
+              EndConnector="128.833333333333,59.9999999999999"
               Start="0,0"
-              End="126.333333333333,52.4999999999998">
+              End="128.833333333333,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5263157894736" />
+                    End="0,31.53772070626" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5263157894736"
-                    Point2="0,35.5263157894736"
-                    Point3="4,35.5263157894736" />
+                    Point1="0,31.53772070626"
+                    Point2="0,35.53772070626"
+                    Point3="4,35.53772070626" />
                   <mssgle:LineSegment
-                    End="122.333333333333,35.5263157894736" />
+                    End="124.833333333333,35.53772070626" />
                   <mssgle:CubicBezierSegment
-                    Point1="122.333333333333,35.5263157894736"
-                    Point2="126.333333333333,35.5263157894736"
-                    Point3="126.333333333333,39.5263157894736" />
+                    Point1="124.833333333333,35.53772070626"
+                    Point2="128.833333333333,35.53772070626"
+                    Point3="128.833333333333,39.53772070626" />
                   <mssgle:LineSegment
-                    End="126.333333333333,52.4999999999998" />
+                    End="128.833333333333,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2270,23 +2141,23 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="161.6,41.6"
+          Size="167,42"
           Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="153.3,513.5" />
+          TopLeft="156.5,515.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="234.1,453.5">
+          TopLeft="240,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2296,23 +2167,23 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="159.2,41.6"
+          Size="165,42"
           Id="Package\Data Flow Task\Insert Destination"
-          TopLeft="154.5,615.099999999999" />
+          TopLeft="157.5,617.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="234.1,555.1">
+          TopLeft="240,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2322,82 +2193,82 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="176,41.6"
+          Size="182,42"
           Id="Package\Data Flow Task\OLE DB Command 1"
-          TopLeft="295.1,208.7" />
+          TopLeft="301,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Inferred Member Updates Output]"
-          TopLeft="254.1,148.7">
+          TopLeft="260.8,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="129,59.9999999999999"
+              EndConnector="131.2,60"
               Start="0,0"
-              End="129,52.4999999999999">
+              End="131.2,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8085106382978" />
+                    End="0,22.8032786885246" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.8085106382978"
-                    Point2="0,26.8085106382978"
-                    Point3="4,26.8085106382978" />
+                    Point1="0,22.8032786885246"
+                    Point2="0,26.8032786885246"
+                    Point3="4,26.8032786885246" />
                   <mssgle:LineSegment
-                    End="125,26.8085106382978" />
+                    End="127.2,26.8032786885246" />
                   <mssgle:CubicBezierSegment
-                    Point1="125,26.8085106382978"
-                    Point2="129,26.8085106382978"
-                    Point3="129,30.8085106382978" />
+                    Point1="127.2,26.8032786885246"
+                    Point2="131.2,26.8032786885246"
+                    Point3="131.2,30.8032786885246" />
                   <mssgle:LineSegment
-                    End="129,52.4999999999999" />
+                    End="131.2,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-9.90298828125,31.8085106382978,148.8059765625,11.658203125"
+              BoundingBox="-8.80298828125001,31.8032786885246,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="176,41.6"
+          Size="182,42"
           Id="Package\Data Flow Task\OLE DB Command 2"
-          TopLeft="532.1,208.7" />
+          TopLeft="544,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Changing Attribute Updates Output]"
-          TopLeft="294.1,148.7">
+          TopLeft="302.4,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="326,59.9999999999999"
+              EndConnector="332.6,60"
               Start="0,0"
-              End="326,52.4999999999999">
+              End="332.6,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.8378378378378" />
+                    End="0,13.8125" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.8378378378378"
-                    Point2="0,17.8378378378378"
-                    Point3="4,17.8378378378378" />
+                    Point1="0,13.8125"
+                    Point2="0,17.8125"
+                    Point3="4,17.8125" />
                   <mssgle:LineSegment
-                    End="322,17.8378378378378" />
+                    End="328.6,17.8125" />
                   <mssgle:CubicBezierSegment
-                    Point1="322,17.8378378378378"
-                    Point2="326,17.8378378378378"
-                    Point3="326,21.8378378378378" />
+                    Point1="328.6,17.8125"
+                    Point2="332.6,17.8125"
+                    Point3="332.6,21.8125" />
                   <mssgle:LineSegment
-                    End="326,52.4999999999999" />
+                    End="332.6,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="84.46609375,22.8378378378378,157.0678125,11.6630859375"
+              BoundingBox="87.76609375,22.8125,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2447,14 +2318,8 @@
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FirstName&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;LastName&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[FullName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FullName&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
