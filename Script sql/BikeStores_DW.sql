@@ -15,45 +15,46 @@ GO
 select * from  cargarFTVentas 
 insert into cargarFTVentas (UltimaCarga) values (getdate())
 
-CREATE TABLE dbo.DimDate(
-    DateKey INT NOT NULL PRIMARY KEY, 
-    [Date] DATE NOT NULL,
-    FullDateUK CHAR(10),     
-    FullDateUSA CHAR(10),     
-    DayOfMonth TINYINT,      
-    DaySuffix VARCHAR(4),
-    DayName VARCHAR(9),
-    DayOfWeekUSA TINYINT,     
-    DayOfWeekUK TINYINT,      
-    DayOfWeekInMonth TINYINT,
-    DayOfWeekInYear SMALLINT,
-    DayOfQuarter SMALLINT,
-    DayOfYear SMALLINT,
-    WeekOfMonth TINYINT,
-    WeekOfQuarter TINYINT,
-    WeekOfYear TINYINT,
-    [Month] TINYINT, 
-    MonthName VARCHAR(9),
-    MonthOfQuarter TINYINT,
-    [Quarter] TINYINT,   
-    QuarterName VARCHAR(9),
-    [Year] SMALLINT,
-    YearName CHAR(7),
-    MonthYear CHAR(10),
-    MMYYYY CHAR(6),
-    FirstDayOfMonth DATE,
-    LastDayOfMonth DATE,
-    FirstDayOfQuarter DATE,
-    LastDayOfQuarter DATE,
-    FirstDayOfYear DATE,
-    LastDayOfYear DATE,
-    IsHolidayUSA BIT,
-    IsWeekday BIT,
-    HolidayUSA VARCHAR(50),
-    IsHolidayUK BIT NULL,
-    HolidayUK VARCHAR(50) NULL
+create table dbo.DimDate(
+    DateKey int not null,
+    [Date] date null,
+    FullDateUK char(10) null,
+    FullDateUSA char(10) null,
+    DayOfMonth varchar(2) null,
+    DaySuffix varchar(4) null,
+    DayName varchar(9) null,
+    DayOfWeekUSA char(1) null,
+    DayOfWeekUK char(1) null,
+    DayOfWeekInMonth varchar(2) null,
+    DayOfWeekInYear varchar(2) null,
+    DayOfQuarter varchar(3) null,
+    DayOfYear varchar(3) null,
+    WeekOfMonth varchar(1) null,
+    WeekOfQuarter varchar(2) null,
+    WeekOfYear varchar(2) null,
+    [Month] varchar(2) null,
+    MonthName varchar(9) null,
+    MonthOfQuarter varchar(2) null,
+    [Quarter] char(1) null,
+    QuarterName varchar(9) null,
+    [Year] char(4) null,
+    YearName char(7) null,
+    MonthYear char(10) null,
+    MMYYYY char(6) null,
+    FirstDayOfMonth date null,
+    LastDayOfMonth date null,
+    FirstDayOfQuarter date null,
+    LastDayOfQuarter date null,
+    FirstDayOfYear date null,
+    LastDayOfYear date null,
+    IsHolidayUSA bit null,
+    IsWeekday bit null,
+    HolidayUSA varchar(50) null,
+    IsHolidayUK bit null,
+    HolidayUK varchar(50) null,
+    constraint PK_DimDate primary key clustered (DateKey)
 );
-GO
+
 
 CREATE TABLE dbo.DimCustomers(
     CustomerKey INT IDENTITY(1,1) NOT NULL,
@@ -193,6 +194,7 @@ create table dbo.FactSales(
 );
 go
 
+
 alter table dbo.FactSales with check add foreign key(ProductKey)
     references dbo.DimProducts(ProductKey);
 alter table dbo.FactSales with check add foreign key(CustomerKey)
@@ -210,6 +212,5 @@ alter table dbo.FactSales with check add foreign key(RequiredDateKey)
 alter table dbo.FactSales with check add foreign key(ShippedDateKey)
     references dbo.DimDate(DateKey);
 go
-
 
 
