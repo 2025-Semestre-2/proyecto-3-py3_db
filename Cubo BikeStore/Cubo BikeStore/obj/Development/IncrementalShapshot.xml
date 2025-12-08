@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>lilE2yEhWD64BoXXL7PsDkCZIXA=7/12/2025 16:47:327/12/2025 16:28:40</TimeStamp>
+        <TimeStamp>/RX0LxrVnl4weWZslQaT1VxHuoA=7/12/2025 23:32:377/12/2025 16:28:40</TimeStamp>
         <ID>
           <String>Bike Stores DW</String>
         </ID>
@@ -60,8 +60,29 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IQKhKKPHaVoHSQIgo0aioAWfm3I=7/12/2025 21:08:477/12/2025 21:04:35</TimeStamp>
+        <ID>
+          <String>Dim Staff</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MNBxeBrpfboLpOEoDVIy3rtWncI=7/12/2025 21:13:057/12/2025 21:11:31</TimeStamp>
+        <ID>
+          <String>Dim Stores</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Dyz1kL+gJ7wboaKKel9Pph9ol00=7/12/2025 23:47:427/12/2025 23:32:37</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>GAiLk2UKT+tAOVg2ffdrHXaygQM=7/12/2025 17:50:007/12/2025 09:29:40BxdMavRX4Tg/TiBQjUGOz+mWdZA=7/12/2025 16:34:477/12/2025 09:29:40</TimeStamp>
+        <TimeStamp>SaSHl9YPzDKmEyEYCxuEirwaUqg=7/12/2025 23:49:067/12/2025 09:29:40BxdMavRX4Tg/TiBQjUGOz+mWdZA=7/12/2025 16:34:477/12/2025 09:29:40</TimeStamp>
         <ID>
           <String>Cubo Bike Stores DW</String>
         </ID>
@@ -78,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-12-07T23:53:15.166667Z</LastDeployed>
+  <LastDeployed>2025-12-08T05:49:55.893333Z</LastDeployed>
 </DeploymentSnapshot>

@@ -23,6 +23,15 @@
       <Dimension>
         <ID>Dim Stocks</ID>
       </Dimension>
+      <Dimension>
+        <ID>Dim Staff</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Stores</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Date</ID>
+      </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>

@@ -35,6 +35,18 @@
       <Name>Dim Stocks.dim</Name>
       <FullPath>Dim Stocks.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Staff.dim</Name>
+      <FullPath>Dim Staff.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Stores.dim</Name>
+      <FullPath>Dim Stores.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
