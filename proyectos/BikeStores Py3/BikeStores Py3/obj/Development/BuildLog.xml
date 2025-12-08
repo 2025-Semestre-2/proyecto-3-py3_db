@@ -63,17 +63,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Orquestador.dtsx</Name>
-      <LastWriteTime>2025-12-07T11:13:35.8941348Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:37:23.3980119Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Orders.dtsx</Name>
-      <LastWriteTime>2025-12-06T10:41:06.660916Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:37:14.1979041Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Products.dtsx</Name>
-      <LastWriteTime>2025-12-06T10:27:48.5529248Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:37:14.1860782Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -83,7 +83,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimStaff.dtsx</Name>
-      <LastWriteTime>2025-12-07T11:13:35.9013281Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:37:14.1670793Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -93,12 +93,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Customers_Hist.dtsx</Name>
-      <LastWriteTime>2025-12-07T11:13:35.9133265Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:37:14.2059052Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Customers.dtsx</Name>
-      <LastWriteTime>2025-12-07T11:13:35.8890404Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:34:57.0831512Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -108,7 +108,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Products_Hist.dtsx</Name>
-      <LastWriteTime>2025-12-06T10:27:48.512736Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:37:14.1780822Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -118,7 +118,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Dim Stocks.dtsx</Name>
-      <LastWriteTime>2025-12-07T11:13:35.8650391Z</LastWriteTime>
+      <LastWriteTime>2025-12-07T23:27:06.7452331Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

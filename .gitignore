@@ -1,0 +1,5 @@
+# Carpetas de Visual Studio
+.vs/
+*.user
+*.suo
+*.vscode/

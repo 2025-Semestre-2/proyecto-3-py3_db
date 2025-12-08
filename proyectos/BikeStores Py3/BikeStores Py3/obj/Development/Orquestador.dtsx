@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{847FE10A-B283-4158-86A6-529660074F22}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{7AB652D3-F850-4D67-BF61-C66C8180D09A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -910,6 +910,10 @@
           Id="Package\Sequence Container\Dim Products Hist"
           TopLeft="686.625958119792,275" />
         <NodeLayout
+          Size="133,42"
+          Id="Package\Sequence Container\Dim srocks"
+          TopLeft="223,516" />
+        <NodeLayout
           Size="118,42"
           Id="Package\Sequence Container\dim staff"
           TopLeft="385.759259443225,471.288891368442" />
@@ -1179,10 +1183,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Sequence Container\Dim srocks"
-          TopLeft="223,516" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 9]"
           TopLeft="223.5,480">

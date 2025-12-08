@@ -12,9 +12,6 @@ CREATE TABLE cargarFTVentas(
 GO
 
 
-select * from  cargarFTVentas 
-insert into cargarFTVentas (UltimaCarga) values (getdate())
-
 create table dbo.DimDate(
     DateKey int not null,
     [Date] date null,
@@ -154,7 +151,6 @@ CREATE TABLE DimProducts_Hist(
 );
 GO
 
-
 CREATE TABLE DimOrders(
   OrdersKey INT IDENTITY(1,1) NOT NULL,
   OrderID INT NOT NULL,
@@ -165,6 +161,7 @@ CREATE TABLE DimOrders(
   CONSTRAINT PK_DimOrders PRIMARY KEY (OrdersKey)
 );
 GO
+
 create table dbo.DimStocks(
     StockKey int identity(1,1) not null,
     StoreID int not null,
@@ -212,5 +209,6 @@ alter table dbo.FactSales with check add foreign key(RequiredDateKey)
 alter table dbo.FactSales with check add foreign key(ShippedDateKey)
     references dbo.DimDate(DateKey);
 go
+
 
 
