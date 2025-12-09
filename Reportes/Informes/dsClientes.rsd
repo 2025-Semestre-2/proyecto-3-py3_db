@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>BikeSotesDW</DataSourceReference>
+      <CommandText>SELECT
+    CustomerID,
+    FullName
+FROM (
+    SELECT
+        CAST(NULL AS INT) AS CustomerID,
+        'Todos los clientes' AS FullName
+    UNION ALL
+    SELECT
+        CustomerID,
+        FullName
+    FROM dbo.DimCustomers
+) AS C
+ORDER BY
+    CASE WHEN CustomerID IS NULL THEN 0 ELSE 1 END,
+    FullName;
+</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="CustomerID">
+        <DataField>CustomerID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="FullName">
+        <DataField>FullName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

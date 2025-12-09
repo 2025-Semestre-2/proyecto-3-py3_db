@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>BikeSotesDW</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@CustomerID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@BrandID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@StartDate">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>DateTime</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@EndDate">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>DateTime</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT
+    p.CategoryName,
+    p.ProductName,
+    p.BrandName,
+    SUM(f.Quantity)                               AS TotalQuantity,
+    SUM(f.AmountGross - f.AmountDiscount)         AS TotalSales
+FROM FactSales AS f
+INNER JOIN DimProducts  AS p ON f.ProductKey   = p.ProductKey
+INNER JOIN DimCustomers AS c ON f.CustomerKey  = c.CustomerKey
+INNER JOIN DimDate      AS d ON f.OrderDateKey = d.DateKey
+WHERE
+      (@CustomerID IS NULL OR c.CustomerID = @CustomerID)
+  AND (@BrandID    IS NULL OR p.BrandID    = @BrandID)
+  AND (@StartDate  IS NULL OR d.[Date]     &gt;= @StartDate)
+  AND (@EndDate    IS NULL OR d.[Date]     &lt;= @EndDate)
+GROUP BY
+    p.CategoryName,
+    p.ProductName,
+    p.BrandName
+ORDER BY
+    p.CategoryName,
+    p.ProductName,
+    p.BrandName;</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="CategoryName">
+        <DataField>CategoryName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ProductName">
+        <DataField>ProductName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="BrandName">
+        <DataField>BrandName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TotalQuantity">
+        <DataField>TotalQuantity</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TotalSales">
+        <DataField>TotalSales</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
