@@ -239,6 +239,8 @@ Medidas:
 
 # 📊 Reportes SSRS
 
+#Link publicacion http://eldermsi/ReportServer
+
 ## Reporte de Ventas (consultando DW)
 Incluye:
 - Total vendido por categoría  
